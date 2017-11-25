@@ -473,6 +473,34 @@ struct PACKED color_t {
 
 
 	////////////////////////////////////////////////////////////////////////////
+	// GET A COLOR FROM A PALETTE INDEX
+	////////////////////////////////////////////////////////////////////////////
+	static color_t palette(uint8_t index) {
+		switch (index) {
+			case  0:	return white();
+			case  1:	return red();
+			case  2:	return yellow();
+			case  3:	return lime();
+			case  4:	return aqua();
+			case  5:	return blue();
+			case  6:	return fuchsia();
+			case  7:	return orange();
+			case  8:	return gray();
+			case  9:	return silver();
+			case 10:	return maroon();
+			case 11:	return olive();
+			case 12:	return green();
+			case 13:	return teal();
+			case 14:	return navy();
+			case 15:	return purple();
+		}
+		return black();
+	}
+
+
+
+
+	////////////////////////////////////////////////////////////////////////////
 	// VGA COLOR NAMES - THESE ARE ALSO THE HTML COLOR CODE NAMES
 	// SOURCE: http://www.blooberry.com/indexdot/color/vganame.htm
 	////////////////////////////////////////////////////////////////////////////

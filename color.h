@@ -170,6 +170,58 @@ struct PACKED color_t {
 
 
 	////////////////////////////////////////////////////////////////////////////
+	// GET THE COLOR FROM THE GIVEN HEX COLOR CODE STRING
+	////////////////////////////////////////////////////////////////////////////
+	INLINE color_t(const String string) : color_t(string.c_str()) {}
+
+
+
+
+	////////////////////////////////////////////////////////////////////////////
+	// GET THE COLOR FROM THE GIVEN HEX COLOR CODE STRING
+	////////////////////////////////////////////////////////////////////////////
+	INLINE color_t(const String *string) : color_t(string->c_str()) {}
+
+
+
+
+	////////////////////////////////////////////////////////////////////////////
+	// GET THE COLOR FROM THE GIVEN HEX COLOR "C" STRING
+	////////////////////////////////////////////////////////////////////////////
+	color_t(const char *string) : color_t() {
+		if (!string  ||  !*string) return;
+
+		if (string[0] == '0'  &&  (string[1] == 'X'  ||  string[1] == 'x')) {
+			string += 2;
+		} else if (string[0] == '#') {
+			string += 1;
+		}
+
+		uint32_t color = 0x000000l;
+
+		for (auto i=0; i<6; i++) {
+			color <<= 4;
+
+			if (!string[i]) return;
+
+			if (string[i] >= '0'  &&  string[i] <= '9') {
+				color |= (string[i] - '0');
+			} else if (string[i] >= 'A'  &&  string[i] <= 'F') {
+				color |= ((string[i] - 'A') + 0x0A);
+			} else if (string[i] >= 'a'  &&  string[i] <= 'f') {
+				color |= ((string[i] - 'a') + 0x0A);
+			} else {
+				return;
+			}
+		}
+
+		*this = color;
+	}
+
+
+
+
+	////////////////////////////////////////////////////////////////////////////
 	// GETTER AS A 15-BIT INTEGER IN TRADITIONAL 0B0RRRRRGGGGGBBBB ORDER
 	////////////////////////////////////////////////////////////////////////////
 	INLINE operator int16_t() const {
@@ -404,10 +456,14 @@ struct PACKED color_t {
 		return this->add(value, value, value);
 	}
 
+	INLINE color_t add(const color_t color) {
+		return this->add(color.r, color.g, color.b);
+	}
+
 	INLINE color_t add(const uint8_t r, const uint8_t g, const uint8_t b) {
-		this->g += g;
-		this->r += r;
-		this->b += b;
+		this->g = min(255, this->g + g);
+		this->r = min(255, this->r + r);
+		this->b = min(255, this->b + b);
 		return this;
 	}
 
@@ -421,10 +477,14 @@ struct PACKED color_t {
 		return this->sub(value, value, value);
 	}
 
+	INLINE color_t sub(const color_t color) {
+		return this->sub(color.r, color.g, color.b);
+	}
+
 	INLINE color_t sub(const uint8_t r, const uint8_t g, const uint8_t b) {
-		this->g -= g;
-		this->r -= r;
-		this->b -= b;
+		this->g = max(0, this->g - g); //TODO: typecast into int16
+		this->r = max(0, this->r - r);
+		this->b = max(0, this->b - b);
 		return this;
 	}
 
@@ -459,6 +519,48 @@ struct PACKED color_t {
 		this->g <<= g;
 		this->r <<= r;
 		this->b <<= b;
+		return this;
+	}
+
+
+
+
+	////////////////////////////////////////////////////////////////////////////
+	// "SCREEN" BLEND WITH ANOTHER VALUE
+	////////////////////////////////////////////////////////////////////////////
+	INLINE color_t screen(const uint8_t value) {
+		return this->screen(value, value, value);
+	}
+
+	INLINE color_t screen(const color_t color) {
+		return this->screen(color.r, color.g, color.b);
+	}
+
+	INLINE color_t screen(const uint8_t r, const uint8_t g, const uint8_t b) {
+		this->g = min( 255, 255 - (( ((uint32_t)(255 - g)) * ((uint32_t)(255 - this->g)) )>>8) );
+		this->r = min( 255, 255 - (( ((uint32_t)(255 - r)) * ((uint32_t)(255 - this->r)) )>>8) );
+		this->b = min( 255, 255 - (( ((uint32_t)(255 - b)) * ((uint32_t)(255 - this->b)) )>>8) );
+		return this;
+	}
+
+
+
+
+	////////////////////////////////////////////////////////////////////////////
+	// "MULTIPLY" BLEND WITH ANOTHER VALUE
+	////////////////////////////////////////////////////////////////////////////
+	INLINE color_t multiply(const uint8_t value) {
+		return this->multiply(value, value, value);
+	}
+
+	INLINE color_t multiply(const color_t color) {
+		return this->multiply(color.r, color.g, color.b);
+	}
+
+	INLINE color_t multiply(const uint8_t r, const uint8_t g, const uint8_t b) {
+		this->g = min(255, ( ((uint32_t)(g)) * ((uint32_t)(this->g)) )>>8);
+		this->r = min(255, ( ((uint32_t)(r)) * ((uint32_t)(this->r)) )>>8);
+		this->b = min(255, ( ((uint32_t)(b)) * ((uint32_t)(this->b)) )>>8);
 		return this;
 	}
 

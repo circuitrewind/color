@@ -26,8 +26,8 @@
 struct PACKED color_t {
 
 	////////////////////////////////////////////////////////////////////////////
-	//NOTE:	yes, this is in G-R-B order, this is the order that the WS2812B
-	//		LED expects the colors to be sent in
+	// NOTE:	yes, this is in G-R-B order, this is the order that the WS2812B
+	//			LED expects the colors to be sent in
 	////////////////////////////////////////////////////////////////////////////
 	uint8_t g;
 	uint8_t r;
@@ -534,40 +534,6 @@ struct PACKED color_t {
 
 
 	////////////////////////////////////////////////////////////////////////////
-	// SHIFT VALUE RIGHT
-	////////////////////////////////////////////////////////////////////////////
-	INLINE color_t right(const uint8_t value) {
-		return this->right(value, value, value);
-	}
-
-	INLINE color_t right(const uint8_t r, const uint8_t g, const uint8_t b) {
-		this->g >>= g;
-		this->r >>= r;
-		this->b >>= b;
-		return this;
-	}
-
-
-
-
-	////////////////////////////////////////////////////////////////////////////
-	// SHIFT VALUE LEFT
-	////////////////////////////////////////////////////////////////////////////
-	INLINE color_t left(const uint8_t value) {
-		return this->left(value, value, value);
-	}
-
-	INLINE color_t left(const uint8_t r, const uint8_t g, const uint8_t b) {
-		this->g <<= g;
-		this->r <<= r;
-		this->b <<= b;
-		return this;
-	}
-
-
-
-
-	////////////////////////////////////////////////////////////////////////////
 	// "SCREEN" BLEND WITH ANOTHER VALUE
 	////////////////////////////////////////////////////////////////////////////
 	INLINE color_t screen(const uint8_t value) {
@@ -610,7 +576,41 @@ struct PACKED color_t {
 
 
 	////////////////////////////////////////////////////////////////////////////
-	//RETURN A COLOR_T FROM PROGMEM
+	// SHIFT VALUE LEFT
+	////////////////////////////////////////////////////////////////////////////
+	INLINE color_t left(const uint8_t value) {
+		return this->left(value, value, value);
+	}
+
+	INLINE color_t left(const uint8_t r, const uint8_t g, const uint8_t b) {
+		this->g <<= g;
+		this->r <<= r;
+		this->b <<= b;
+		return this;
+	}
+
+
+
+
+	////////////////////////////////////////////////////////////////////////////
+	// SHIFT VALUE RIGHT
+	////////////////////////////////////////////////////////////////////////////
+	INLINE color_t right(const uint8_t value) {
+		return this->right(value, value, value);
+	}
+
+	INLINE color_t right(const uint8_t r, const uint8_t g, const uint8_t b) {
+		this->g >>= g;
+		this->r >>= r;
+		this->b >>= b;
+		return this;
+	}
+
+
+
+
+	////////////////////////////////////////////////////////////////////////////
+	// RETURN A COLOR_T FROM PROGMEM
 	////////////////////////////////////////////////////////////////////////////
 	#ifdef PROGMEM
 	static color_t progmem(const void *address) {

@@ -22,6 +22,14 @@
 
 
 
+enum COLOR_HEX_TYPE {
+	COLOR_HEX_NORMAL,
+	COLOR_HEX_HTML,
+	COLOR_HEX_LITERAL,
+};
+
+
+
 
 struct PACKED color_t {
 
@@ -619,6 +627,41 @@ struct PACKED color_t {
 		return output;
 	}
 	#endif
+
+
+
+
+	////////////////////////////////////////////////////////////////////////////
+	// INPUT A HUE VALUE 0 TO 767 TO GET A RGB COLOR VALUE.
+	// THE COLORS ARE A TRANSITION R - G - B - BACK TO R.
+	////////////////////////////////////////////////////////////////////////////
+	INLINE String hex(COLOR_HEX_TYPE type) {
+		char buffer[10];
+		this->hex(buffer, type);
+		return String(buffer);
+	}
+
+	const char *hex(char *buffer, COLOR_HEX_TYPE type) {
+		uint32_t	color	= *this;
+		char		*buf	= buffer;
+
+		switch (type) {
+			case COLOR_HEX_HTML:	*buf++ = '#';					break;
+			case COLOR_HEX_LITERAL:	*buf++ = '0';	*buf++ = 'x';	break;
+		}
+
+		for (int i=5; i>=0; i--) {
+			uint32_t part = (color >> (i << 2)) & 0x0F;
+
+			*buf++	= (part <= 0x09)
+					? (part + '0')
+					: ((part - 0xA) + 'A');
+		}
+
+		*buf = NULL;
+
+		return buffer;
+	}
 
 
 

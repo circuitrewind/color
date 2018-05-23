@@ -450,6 +450,48 @@ struct PACKED color_t {
 
 
 	////////////////////////////////////////////////////////////////////////////
+	// SET TO MINIMUM OF TWO VALUES
+	////////////////////////////////////////////////////////////////////////////
+	INLINE color_t min(const uint8_t value) {
+		return this->min(value, value, value);
+	}
+
+	INLINE color_t min(const color_t color) {
+		return this->min(color.r, color.g, color.b);
+	}
+
+	INLINE color_t min(const uint8_t r, const uint8_t g, const uint8_t b) {
+		this->g = _min(g, this->g + g);
+		this->r = _min(r, this->r + r);
+		this->b = _min(b, this->b + b);
+		return this;
+	}
+
+
+
+
+	////////////////////////////////////////////////////////////////////////////
+	// SET TO MINIMUM OF TWO VALUES
+	////////////////////////////////////////////////////////////////////////////
+	INLINE color_t max(const uint8_t value) {
+		return this->max(value, value, value);
+	}
+
+	INLINE color_t max(const color_t color) {
+		return this->max(color.r, color.g, color.b);
+	}
+
+	INLINE color_t max(const uint8_t r, const uint8_t g, const uint8_t b) {
+		this->g = _max(g, this->g + g);
+		this->r = _max(r, this->r + r);
+		this->b = _max(b, this->b + b);
+		return this;
+	}
+
+
+
+
+	////////////////////////////////////////////////////////////////////////////
 	// INCREASE VALUE
 	////////////////////////////////////////////////////////////////////////////
 	INLINE color_t add(const uint8_t value) {
@@ -461,9 +503,9 @@ struct PACKED color_t {
 	}
 
 	INLINE color_t add(const uint8_t r, const uint8_t g, const uint8_t b) {
-		this->g = min(255, this->g + g);
-		this->r = min(255, this->r + r);
-		this->b = min(255, this->b + b);
+		this->g = _min(255, this->g + g);
+		this->r = _min(255, this->r + r);
+		this->b = _min(255, this->b + b);
 		return this;
 	}
 
@@ -482,9 +524,9 @@ struct PACKED color_t {
 	}
 
 	INLINE color_t sub(const uint8_t r, const uint8_t g, const uint8_t b) {
-		this->g = max(0, this->g - g); //TODO: typecast into int16
-		this->r = max(0, this->r - r);
-		this->b = max(0, this->b - b);
+		this->g = _max(0, this->g - g); //TODO: typecast into int16
+		this->r = _max(0, this->r - r);
+		this->b = _max(0, this->b - b);
 		return this;
 	}
 
@@ -537,9 +579,9 @@ struct PACKED color_t {
 	}
 
 	INLINE color_t screen(const uint8_t r, const uint8_t g, const uint8_t b) {
-		this->g = min( 255, 255 - (( ((uint32_t)(255 - g)) * ((uint32_t)(255 - this->g)) )>>8) );
-		this->r = min( 255, 255 - (( ((uint32_t)(255 - r)) * ((uint32_t)(255 - this->r)) )>>8) );
-		this->b = min( 255, 255 - (( ((uint32_t)(255 - b)) * ((uint32_t)(255 - this->b)) )>>8) );
+		this->g = _min( 255, 255 - (( ((uint32_t)(255 - g)) * ((uint32_t)(255 - this->g)) )>>8) );
+		this->r = _min( 255, 255 - (( ((uint32_t)(255 - r)) * ((uint32_t)(255 - this->r)) )>>8) );
+		this->b = _min( 255, 255 - (( ((uint32_t)(255 - b)) * ((uint32_t)(255 - this->b)) )>>8) );
 		return this;
 	}
 
@@ -558,9 +600,9 @@ struct PACKED color_t {
 	}
 
 	INLINE color_t multiply(const uint8_t r, const uint8_t g, const uint8_t b) {
-		this->g = min(255, ( ((uint32_t)(g)) * ((uint32_t)(this->g)) )>>8);
-		this->r = min(255, ( ((uint32_t)(r)) * ((uint32_t)(this->r)) )>>8);
-		this->b = min(255, ( ((uint32_t)(b)) * ((uint32_t)(this->b)) )>>8);
+		this->g = _min(255, ( ((uint32_t)(g)) * ((uint32_t)(this->g)) )>>8);
+		this->r = _min(255, ( ((uint32_t)(r)) * ((uint32_t)(this->r)) )>>8);
+		this->b = _min(255, ( ((uint32_t)(b)) * ((uint32_t)(this->b)) )>>8);
 		return this;
 	}
 

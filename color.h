@@ -641,7 +641,7 @@ struct PACKED color_t {
 		return String(buffer);
 	}
 
-	const char *hex(char *buffer, COLOR_HEX_TYPE type) {
+	const char *hex(char *buffer, COLOR_HEX_TYPE type=COLOR_HEX_NORMAL) {
 		uint32_t	color	= *this;
 		char		*buf	= buffer;
 

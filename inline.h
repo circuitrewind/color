@@ -13,6 +13,11 @@
 #endif
 
 
+#ifndef nullbyte
+#define nullbyte	(0x00)
+#endif
+
+
 #ifndef _max
 #define _max(a,b) ({ \
 	__typeof__ (a) _a = (a); \

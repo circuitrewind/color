@@ -553,9 +553,9 @@ struct PACKED color_t {
 	}
 
 	INLINE color_t screen(const uint8_t r, const uint8_t g, const uint8_t b) {
-		this->g = _min( 255, 255 - (( ((uint32_t)(255 - g)) * ((uint32_t)(255 - this->g)) )>>8) );
-		this->r = _min( 255, 255 - (( ((uint32_t)(255 - r)) * ((uint32_t)(255 - this->r)) )>>8) );
-		this->b = _min( 255, 255 - (( ((uint32_t)(255 - b)) * ((uint32_t)(255 - this->b)) )>>8) );
+		this->g = _min( (uint32_t)255, 255 - (( ((uint32_t)(255 - g)) * ((uint32_t)(255 - this->g)) )>>8) );
+		this->r = _min( (uint32_t)255, 255 - (( ((uint32_t)(255 - r)) * ((uint32_t)(255 - this->r)) )>>8) );
+		this->b = _min( (uint32_t)255, 255 - (( ((uint32_t)(255 - b)) * ((uint32_t)(255 - this->b)) )>>8) );
 		return this;
 	}
 
@@ -574,9 +574,9 @@ struct PACKED color_t {
 	}
 
 	INLINE color_t multiply(const uint8_t r, const uint8_t g, const uint8_t b) {
-		this->g = _min(255, ( ((uint32_t)(g)) * ((uint32_t)(this->g)) )>>8);
-		this->r = _min(255, ( ((uint32_t)(r)) * ((uint32_t)(this->r)) )>>8);
-		this->b = _min(255, ( ((uint32_t)(b)) * ((uint32_t)(this->b)) )>>8);
+		this->g = _min((uint32_t)255, ( ((uint32_t)(g)) * ((uint32_t)(this->g)) )>>8);
+		this->r = _min((uint32_t)255, ( ((uint32_t)(r)) * ((uint32_t)(this->r)) )>>8);
+		this->b = _min((uint32_t)255, ( ((uint32_t)(b)) * ((uint32_t)(this->b)) )>>8);
 		return this;
 	}
 
@@ -648,6 +648,7 @@ struct PACKED color_t {
 		switch (type) {
 			case COLOR_HEX_HTML:	*buf++ = '#';					break;
 			case COLOR_HEX_LITERAL:	*buf++ = '0';	*buf++ = 'x';	break;
+			case COLOR_HEX_NORMAL:	break; // DO NOTHING
 		}
 
 		for (int i=5; i>=0; i--) {
@@ -658,7 +659,7 @@ struct PACKED color_t {
 					: ((part - 0xA) + 'A');
 		}
 
-		*buf = NULL;
+		*buf = nullbyte;
 
 		return buffer;
 	}

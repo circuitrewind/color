@@ -747,14 +747,17 @@ struct PACKED color_t {
 	static INLINE color_t antiquewhite2()			{ return 0xeedfccl; }
 	static INLINE color_t antiquewhite3()			{ return 0xcdc0b0l; }
 	static INLINE color_t antiquewhite4()			{ return 0x8b8378l; }
+	static INLINE color_t aquamarine()				{ return 0x7fffd4l; }
 	static INLINE color_t aquamarine1()				{ return 0x7fffd4l; }
 	static INLINE color_t aquamarine2()				{ return 0x76eec6l; }
 	static INLINE color_t aquamarine4()				{ return 0x458b74l; }
+	static INLINE color_t azure()					{ return 0xf0ffffl; }
 	static INLINE color_t azure1()					{ return 0xf0ffffl; }
 	static INLINE color_t azure2()					{ return 0xe0eeeel; }
 	static INLINE color_t azure3()					{ return 0xc1cdcdl; }
 	static INLINE color_t azure4()					{ return 0x838b8bl; }
 	static INLINE color_t beige()					{ return 0xf5f5dcl; }
+	static INLINE color_t bisque()					{ return 0xffe4c4l; }
 	static INLINE color_t bisque1()					{ return 0xffe4c4l; }
 	static INLINE color_t bisque2()					{ return 0xeed5b7l; }
 	static INLINE color_t bisque3()					{ return 0xcdb79el; }
@@ -779,6 +782,7 @@ struct PACKED color_t {
 	static INLINE color_t cadetblue2()				{ return 0x8ee5eel; }
 	static INLINE color_t cadetblue3()				{ return 0x7ac5cdl; }
 	static INLINE color_t cadetblue4()				{ return 0x53868bl; }
+	static INLINE color_t chartreuse()				{ return 0x7fff00l; }
 	static INLINE color_t chartreuse1()				{ return 0x7fff00l; }
 	static INLINE color_t chartreuse2()				{ return 0x76ee00l; }
 	static INLINE color_t chartreuse3()				{ return 0x66cd00l; }
@@ -793,21 +797,29 @@ struct PACKED color_t {
 	static INLINE color_t coral3()					{ return 0xcd5b45l; }
 	static INLINE color_t coral4()					{ return 0x8b3e2fl; }
 	static INLINE color_t cornflowerblue()			{ return 0x6495edl; }
+	static INLINE color_t cornsilk()				{ return 0xfff8dcl; }
 	static INLINE color_t cornsilk1()				{ return 0xfff8dcl; }
 	static INLINE color_t ornsilk2()				{ return 0xeee8cdl; }
 	static INLINE color_t cornsilk3()				{ return 0xcdc8b1l; }
 	static INLINE color_t cornsilk4()				{ return 0x8b8878l; }
+	static INLINE color_t crimson()					{ return 0xdc143cl; }
+	static INLINE color_t cyan()					{ return 0x00ffffl; }
 	static INLINE color_t cyan1()					{ return 0x00ffffl; }
 	static INLINE color_t cyan2()					{ return 0x00eeeel; }
 	static INLINE color_t cyan3()					{ return 0x00cdcdl; }
 	static INLINE color_t cyan4()					{ return 0x008b8bl; }
+	static INLINE color_t darkblue()				{ return 0x00008bl; }
+	static INLINE color_t darkcyan()				{ return 0x008b8bl; }
 	static INLINE color_t darkgoldenrod()			{ return 0xb8860bl; }
 	static INLINE color_t darkgoldenrod1()			{ return 0xffb90fl; }
 	static INLINE color_t darkgoldenrod2()			{ return 0xeead0el; }
 	static INLINE color_t darkgoldenrod3()			{ return 0xcd950cl; }
 	static INLINE color_t darkgoldenrod4()			{ return 0x8b6508l; }
+	static INLINE color_t darkgray()				{ return 0xa9a9a9l; }
 	static INLINE color_t darkgreen()				{ return 0x006400l; }
+	static INLINE color_t darkgrey()				{ return 0xa9a9a9l; }
 	static INLINE color_t darkkhaki()				{ return 0xbdb76bl; }
+	static INLINE color_t darkmagenta()				{ return 0x8b008bl; }
 	static INLINE color_t darkolivegreen()			{ return 0x556b2fl; }
 	static INLINE color_t darkolivegreen1()			{ return 0xcaff70l; }
 	static INLINE color_t darkolivegreen2()			{ return 0xbcee68l; }
@@ -823,6 +835,7 @@ struct PACKED color_t {
 	static INLINE color_t darkorchid2()				{ return 0xb23aeel; }
 	static INLINE color_t darkorchid3()				{ return 0x9a32cdl; }
 	static INLINE color_t darkorchid4()				{ return 0x68228bl; }
+	static INLINE color_t darkred()					{ return 0x8b0000l; }
 	static INLINE color_t darksalmon()				{ return 0xe9967al; }
 	static INLINE color_t darkseagreen()			{ return 0x8fbc8fl; }
 	static INLINE color_t darkseagreen1()			{ return 0xc1ffc1l; }
@@ -835,17 +848,22 @@ struct PACKED color_t {
 	static INLINE color_t darkslategray2()			{ return 0x8deeeel; }
 	static INLINE color_t darkslategray3()			{ return 0x79cdcdl; }
 	static INLINE color_t darkslategray4()			{ return 0x528b8bl; }
+	static INLINE color_t darkslategrey()			{ return 0x2f4f4fl; }
 	static INLINE color_t darkturquoise()			{ return 0x00ced1l; }
 	static INLINE color_t darkviolet()				{ return 0x9400d3l; }
+	static INLINE color_t deeppink()				{ return 0xff1493l; }
 	static INLINE color_t deeppink1()				{ return 0xff1493l; }
 	static INLINE color_t deeppink2()				{ return 0xee1289l; }
 	static INLINE color_t deeppink3()				{ return 0xcd1076l; }
 	static INLINE color_t deeppink4()				{ return 0x8b0a50l; }
+	static INLINE color_t deepskyblue()				{ return 0x00bfffl; }
 	static INLINE color_t deepskyblue1()			{ return 0x00bfffl; }
 	static INLINE color_t deepskyblue2()			{ return 0x00b2eel; }
 	static INLINE color_t deepskyblue3()			{ return 0x009acdl; }
 	static INLINE color_t deepskyblue4()			{ return 0x00688bl; }
 	static INLINE color_t dimgray()					{ return 0x696969l; }
+	static INLINE color_t dimgrey()					{ return 0x696969l; }
+	static INLINE color_t dodgerblue()				{ return 0x1e90ffl; }
 	static INLINE color_t dodgerblue1()				{ return 0x1e90ffl; }
 	static INLINE color_t dodgerblue2()				{ return 0x1c86eel; }
 	static INLINE color_t dodgerblue3()				{ return 0x1874cdl; }
@@ -859,6 +877,7 @@ struct PACKED color_t {
 	static INLINE color_t forestgreen()				{ return 0x228b22l; }
 	static INLINE color_t gainsboro()				{ return 0xdcdcdcl; }
 	static INLINE color_t ghostwhite()				{ return 0xf8f8ffl; }
+	static INLINE color_t gold()					{ return 0xffd700l; }
 	static INLINE color_t gold1()					{ return 0xffd700l; }
 	static INLINE color_t gold2()					{ return 0xeec900l; }
 	static INLINE color_t gold3()					{ return 0xcdad00l; }
@@ -972,6 +991,8 @@ struct PACKED color_t {
 	static INLINE color_t green3()					{ return 0x00cd00l; }
 	static INLINE color_t green4()					{ return 0x008b00l; }
 	static INLINE color_t greenyellow()				{ return 0xadff2fl; }
+	static INLINE color_t grey()					{ return 0x808080l; }
+	static INLINE color_t honeydew()				{ return 0xf0fff0l; }
 	static INLINE color_t honeydew1()				{ return 0xf0fff0l; }
 	static INLINE color_t honeydew2()				{ return 0xe0eee0l; }
 	static INLINE color_t honeydew3()				{ return 0xc1cdc1l; }
@@ -986,6 +1007,8 @@ struct PACKED color_t {
 	static INLINE color_t indianred2()				{ return 0xee6363l; }
 	static INLINE color_t indianred3()				{ return 0xcd5555l; }
 	static INLINE color_t indianred4()				{ return 0x8b3a3al; }
+	static INLINE color_t indigo()					{ return 0x4b0082l; }
+	static INLINE color_t ivory()					{ return 0xfffff0l; }
 	static INLINE color_t ivory1()					{ return 0xfffff0l; }
 	static INLINE color_t ivory2()					{ return 0xeeeee0l; }
 	static INLINE color_t ivory3()					{ return 0xcdcdc1l; }
@@ -996,11 +1019,13 @@ struct PACKED color_t {
 	static INLINE color_t khaki3()					{ return 0xcdc673l; }
 	static INLINE color_t khaki4()					{ return 0x8b864el; }
 	static INLINE color_t lavender()				{ return 0xe6e6fal; }
+	static INLINE color_t lavenderblush()			{ return 0xfff0f5l; }
 	static INLINE color_t lavenderblush1()			{ return 0xfff0f5l; }
 	static INLINE color_t lavenderblush2()			{ return 0xeee0e5l; }
 	static INLINE color_t lavenderblush3()			{ return 0xcdc1c5l; }
 	static INLINE color_t lavenderblush4()			{ return 0x8b8386l; }
 	static INLINE color_t lawngreen()				{ return 0x7cfc00l; }
+	static INLINE color_t lemonchiffon()			{ return 0xfffacdl; }
 	static INLINE color_t lemonchiffon1()			{ return 0xfffacdl; }
 	static INLINE color_t lemonchiffon2()			{ return 0xeee9bfl; }
 	static INLINE color_t lemonchiffon3()			{ return 0xcdc9a5l; }
@@ -1012,6 +1037,7 @@ struct PACKED color_t {
 	static INLINE color_t lightblue3()				{ return 0x9ac0cdl; }
 	static INLINE color_t lightblue4()				{ return 0x68838bl; }
 	static INLINE color_t lightcoral()				{ return 0xf08080l; }
+	static INLINE color_t lightcyan()				{ return 0xe0ffffl; }
 	static INLINE color_t lightcyan1()				{ return 0xe0ffffl; }
 	static INLINE color_t lightcyan2()				{ return 0xd1eeeel; }
 	static INLINE color_t lightcyan3()				{ return 0xb4cdcdl; }
@@ -1022,11 +1048,14 @@ struct PACKED color_t {
 	static INLINE color_t lightgoldenrod4()			{ return 0x8b814cl; }
 	static INLINE color_t lightgoldenrodyellow()	{ return 0xfafad2l; }
 	static INLINE color_t lightgray()				{ return 0xd3d3d3l; }
+	static INLINE color_t lightgreen()				{ return 0x90ee90l; }
+	static INLINE color_t lightgrey()				{ return 0xd3d3d3l; }
 	static INLINE color_t lightpink()				{ return 0xffb6c1l; }
 	static INLINE color_t lightpink1()				{ return 0xffaeb9l; }
 	static INLINE color_t lightpink2()				{ return 0xeea2adl; }
 	static INLINE color_t lightpink3()				{ return 0xcd8c95l; }
 	static INLINE color_t lightpink4()				{ return 0x8b5f65l; }
+	static INLINE color_t lightsalmon()				{ return 0xffa07al; }
 	static INLINE color_t lightsalmon1()			{ return 0xffa07al; }
 	static INLINE color_t lightsalmon2()			{ return 0xee9572l; }
 	static INLINE color_t lightsalmon3()			{ return 0xcd8162l; }
@@ -1039,11 +1068,13 @@ struct PACKED color_t {
 	static INLINE color_t lightskyblue4()			{ return 0x607b8bl; }
 	static INLINE color_t lightslateblue()			{ return 0x8470ffl; }
 	static INLINE color_t lightslategray()			{ return 0x778899l; }
+	static INLINE color_t lightslategrey()			{ return 0x778899l; }
 	static INLINE color_t lightsteelblue()			{ return 0xb0c4del; }
 	static INLINE color_t lightsteelblue1()			{ return 0xcae1ffl; }
 	static INLINE color_t lightsteelblue2()			{ return 0xbcd2eel; }
 	static INLINE color_t lightsteelblue3()			{ return 0xa2b5cdl; }
 	static INLINE color_t lightsteelblue4()			{ return 0x6e7b8bl; }
+	static INLINE color_t lightyellow()				{ return 0xffffe0l; }
 	static INLINE color_t lightyellow1()			{ return 0xffffe0l; }
 	static INLINE color_t lightyellow2()			{ return 0xeeeed1l; }
 	static INLINE color_t lightyellow3()			{ return 0xcdcdb4l; }
@@ -1079,11 +1110,13 @@ struct PACKED color_t {
 	static INLINE color_t mediumvioletred()			{ return 0xc71585l; }
 	static INLINE color_t midnightblue()			{ return 0x191970l; }
 	static INLINE color_t mintcream()				{ return 0xf5fffal; }
+	static INLINE color_t mistyrose()				{ return 0xffe4e1l; }
 	static INLINE color_t mistyrose1()				{ return 0xffe4e1l; }
 	static INLINE color_t mistyrose2()				{ return 0xeed5d2l; }
 	static INLINE color_t mistyrose3()				{ return 0xcdb7b5l; }
 	static INLINE color_t mistyrose4()				{ return 0x8b7d7bl; }
 	static INLINE color_t moccasin()				{ return 0xffe4b5l; }
+	static INLINE color_t navajowhite()				{ return 0xffdeadl; }
 	static INLINE color_t navajowhite1()			{ return 0xffdeadl; }
 	static INLINE color_t navajowhite2()			{ return 0xeecfa1l; }
 	static INLINE color_t navajowhite3()			{ return 0xcdb38bl; }
@@ -1098,6 +1131,7 @@ struct PACKED color_t {
 	static INLINE color_t orange2()					{ return 0xee9a00l; }
 	static INLINE color_t orange3()					{ return 0xcd8500l; }
 	static INLINE color_t orange4()					{ return 0x8b5a00l; }
+	static INLINE color_t orangered()				{ return 0xff4500l; }
 	static INLINE color_t orangered1()				{ return 0xff4500l; }
 	static INLINE color_t orangered2()				{ return 0xee4000l; }
 	static INLINE color_t orangered3()				{ return 0xcd3700l; }
@@ -1107,6 +1141,7 @@ struct PACKED color_t {
 	static INLINE color_t orchid2()					{ return 0xee7ae9l; }
 	static INLINE color_t orchid3()					{ return 0xcd69c9l; }
 	static INLINE color_t orchid4()					{ return 0x8b4789l; }
+	static INLINE color_t ornsilk2()				{ return 0xeee8cdl; }
 	static INLINE color_t pale()					{ return 0xdb7093l; }
 	static INLINE color_t palegoldenrod()			{ return 0xeee8aal; }
 	static INLINE color_t palegreen()				{ return 0x98fb98l; }
@@ -1125,10 +1160,12 @@ struct PACKED color_t {
 	static INLINE color_t palevioletred3()			{ return 0xcd6889l; }
 	static INLINE color_t palevioletred4()			{ return 0x8b475dl; }
 	static INLINE color_t papayawhip()				{ return 0xffefd5l; }
+	static INLINE color_t peachpuff()				{ return 0xffdab9l; }
 	static INLINE color_t peachpuff1()				{ return 0xffdab9l; }
 	static INLINE color_t peachpuff2()				{ return 0xeecbadl; }
 	static INLINE color_t peachpuff3()				{ return 0xcdaf95l; }
 	static INLINE color_t peachpuff4()				{ return 0x8b7765l; }
+	static INLINE color_t peru()					{ return 0xcd853fl; }
 	static INLINE color_t pink()					{ return 0xffc0cbl; }
 	static INLINE color_t pink1()					{ return 0xffb5c5l; }
 	static INLINE color_t pink2()					{ return 0xeea9b8l; }
@@ -1145,6 +1182,7 @@ struct PACKED color_t {
 	static INLINE color_t purple2()					{ return 0x912ceel; }
 	static INLINE color_t purple3()					{ return 0x7d26cdl; }
 	static INLINE color_t purple4()					{ return 0x551a8bl; }
+	static INLINE color_t rebeccapurple()			{ return 0x663399l; }
 	static INLINE color_t red1()					{ return 0xff0000l; }
 	static INLINE color_t red2()					{ return 0xee0000l; }
 	static INLINE color_t red3()					{ return 0xcd0000l; }
@@ -1166,10 +1204,12 @@ struct PACKED color_t {
 	static INLINE color_t salmon3()					{ return 0xcd7054l; }
 	static INLINE color_t salmon4()					{ return 0x8b4c39l; }
 	static INLINE color_t sandybrown()				{ return 0xf4a460l; }
+	static INLINE color_t seagreen()				{ return 0x2e8b57l; }
 	static INLINE color_t seagreen1()				{ return 0x54ff9fl; }
 	static INLINE color_t seagreen2()				{ return 0x4eee94l; }
 	static INLINE color_t seagreen3()				{ return 0x43cd80l; }
 	static INLINE color_t seagreen4()				{ return 0x2e8b57l; }
+	static INLINE color_t seashell()				{ return 0xfff5eel; }
 	static INLINE color_t seashell1()				{ return 0xfff5eel; }
 	static INLINE color_t seashell2()				{ return 0xeee5del; }
 	static INLINE color_t seashell3()				{ return 0xcdc5bfl; }
@@ -1194,10 +1234,13 @@ struct PACKED color_t {
 	static INLINE color_t slategray2()				{ return 0xb9d3eel; }
 	static INLINE color_t slategray3()				{ return 0x9fb6cdl; }
 	static INLINE color_t slategray4()				{ return 0x6c7b8bl; }
+	static INLINE color_t slategrey()				{ return 0x708090l; }
+	static INLINE color_t snow()					{ return 0xfffafal; }
 	static INLINE color_t snow1()					{ return 0xfffafal; }
 	static INLINE color_t snow2()					{ return 0xeee9e9l; }
 	static INLINE color_t snow3()					{ return 0xcdc9c9l; }
 	static INLINE color_t snow4()					{ return 0x8b8989l; }
+	static INLINE color_t springgreen()				{ return 0x00ff7fl; }
 	static INLINE color_t springgreen1()			{ return 0x00ff7fl; }
 	static INLINE color_t springgreen2()			{ return 0x00ee76l; }
 	static INLINE color_t springgreen3()			{ return 0x00cd66l; }
@@ -1217,6 +1260,7 @@ struct PACKED color_t {
 	static INLINE color_t thistle2()				{ return 0xeed2eel; }
 	static INLINE color_t thistle3()				{ return 0xcdb5cdl; }
 	static INLINE color_t thistle4()				{ return 0x8b7b8bl; }
+	static INLINE color_t tomato()					{ return 0xff6347l; }
 	static INLINE color_t tomato1()					{ return 0xff6347l; }
 	static INLINE color_t tomato2()					{ return 0xee5c42l; }
 	static INLINE color_t tomato3()					{ return 0xcd4f39l; }

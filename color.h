@@ -799,7 +799,7 @@ struct PACKED color_t {
 	static INLINE color_t cornflowerblue()			{ return 0x6495edl; }
 	static INLINE color_t cornsilk()				{ return 0xfff8dcl; }
 	static INLINE color_t cornsilk1()				{ return 0xfff8dcl; }
-	static INLINE color_t ornsilk2()				{ return 0xeee8cdl; }
+	static INLINE color_t cornsilk2()				{ return 0xeee8cdl; }
 	static INLINE color_t cornsilk3()				{ return 0xcdc8b1l; }
 	static INLINE color_t cornsilk4()				{ return 0x8b8878l; }
 	static INLINE color_t crimson()					{ return 0xdc143cl; }
@@ -1141,7 +1141,6 @@ struct PACKED color_t {
 	static INLINE color_t orchid2()					{ return 0xee7ae9l; }
 	static INLINE color_t orchid3()					{ return 0xcd69c9l; }
 	static INLINE color_t orchid4()					{ return 0x8b4789l; }
-	static INLINE color_t ornsilk2()				{ return 0xeee8cdl; }
 	static INLINE color_t pale()					{ return 0xdb7093l; }
 	static INLINE color_t palegoldenrod()			{ return 0xeee8aal; }
 	static INLINE color_t palegreen()				{ return 0x98fb98l; }

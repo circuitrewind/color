@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------------*\
-| PART OF THE COSPLAY.LIGHTING SOURCE CODE LIBRARY COLLECTION.                 |
-| SOURCE:  https://github.com/cosplaylighting/color                            |
-| LICENSE: https://github.com/cosplaylighting/color/blob/master/LICENSE        |
+| PART OF THE CIRCUIT REWIND SOURCE CODE LIBRARY COLLECTION.                   |
+| SOURCE:  https://github.com/circuitrewind/color                              |
+| LICENSE: https://github.com/circuitrewind/color/blob/main/LICENSE            |
 +------------------------------------------------------------------------------+
 | SIMPLE STRUCT FOR HANDLING RGB COLOR VALUES FOR THE WS2812B LED.             |
 | THIS LIBRARY HANDLES CONVERSIONS TO/FROM INTEGER VALUES, RGB VALUES, AND     |
